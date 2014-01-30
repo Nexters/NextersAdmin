@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
   belongs_to :category
   attr_accessible :category_id
 
-  has_one :reservation
+  has_one :reservation, :dependent=>:destroy
   #belongs_to :member_res, :class_name => 'Member', :primary_key => 'member_res_id',:foreign_key => 'member_res_id'
   #attr_accessible :member_res_id
 
