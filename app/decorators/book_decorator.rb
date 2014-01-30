@@ -1,7 +1,7 @@
 class BookDecorator < Draper::Decorator
   delegate_all
   def status_html
-    if model.reservation == nil
+    if model.reservation == nil || model.reservation.due_date == nil
       h.content_tag :span, "대여가능", class: "status_tag green"
     elsif model.reservation.due_date < Time.now.midnight
       h.content_tag :span, "연체중", class: "status_tag red"
