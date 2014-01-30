@@ -45,7 +45,7 @@ ActiveAdmin.register Reservation do
       puts params
       f.input :due_date, :as=>:date_select, :hint=>"언제까지 빌릴거야?"
       f.input :book, :hint => "빌릴 책이 먼데?", :selected => params[:book_id]
-      f.input :member, :hint => "누가 빌는거야?"
+      f.input :member, :hint => "누가 빌는거야?", :include_blank => false
     end
     f.actions
   end
