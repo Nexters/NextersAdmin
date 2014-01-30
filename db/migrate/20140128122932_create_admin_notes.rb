@@ -1,6 +1,6 @@
 class CreateAdminNotes < ActiveRecord::Migration
   def self.up
-    create_table :admin_notes do |t|
+    create_table :admin_notes,:options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.string :resource_id, :null => false
       t.string :resource_type, :null => false
       t.references :admin_user, :polymorphic => true

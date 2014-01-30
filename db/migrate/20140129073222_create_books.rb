@@ -1,6 +1,6 @@
 class CreateBooks < ActiveRecord::Migration
   def change
-    create_table :books do |t|
+    create_table :books,:options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.string :title
       t.string :author
       t.text :description
